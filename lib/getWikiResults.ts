@@ -13,7 +13,7 @@ export default async function getWikiResults(searchTerm: string) {
         origin: '*',
     });
     const res = await fetch(
-        'https://www.mediawiki.org/w/api.php' + searchParams
+        'https://en.wikipedia.org/w/api.php?' + searchParams
     );
     return res.json();
 }
