@@ -1,7 +1,7 @@
 type Result = {
     pageid: string;
     title: string;
-    extracts: string;
+    extract: string;
     thumbnail: {
         source: string;
         width: number;

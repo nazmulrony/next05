@@ -1,5 +1,7 @@
+'use client';
 import getWikiResults from '@/lib/getWikiResults';
 import type { Metadata } from 'next';
+import Item from './components/Item';
 
 type Props = {
     params: {
@@ -34,7 +36,7 @@ export default async function SearchResults({ params: { searchTerm } }: Props) {
         <main className=" bg-slate-200 mx-auto max-w-lg py-1 min-h-screen">
             {results ? (
                 Object.values(results).map((result) => (
-                    <p key={result.pageid}> {JSON.stringify(result)}</p>
+                    <Item key={result.pageid} result={result} />
                 ))
             ) : (
                 <h2 className="p-2 text-xl">{`${searchTerm} not found`}</h2>
